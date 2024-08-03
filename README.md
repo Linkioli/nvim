@@ -5,7 +5,7 @@
 # debian
 sudo apt install nodejs npm
 # arch
-sudo apt install nodejs npm
+sudo pacman -S nodejs npm
 ```
 - vim-plug
 ```
