@@ -45,6 +45,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' } 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'habamax/vim-godot'
 " Plug 'dylanaraps/wal.vim'                           " adds pywal support
 
 call plug#end()
@@ -152,3 +153,20 @@ let g:airline_theme='base16_gruvbox_dark_hard'
 " ---------------------------------------------------------------------------
 
 lua require'nvim-treesitter.configs'.setup{highlight={enable=true}}
+
+" ---------------------------------------------------------------------------
+" godot settings
+" ---------------------------------------------------------------------------
+
+func! GodotSettings() abort
+    setlocal foldmethod=expr
+    setlocal tabstop=4
+    nnoremap <buffer> <F4> :GodotRunLast<CR>
+    nnoremap <buffer> <F5> :GodotRun<CR>
+    nnoremap <buffer> <F6> :GodotRunCurrent<CR>
+    nnoremap <buffer> <F7> :GodotRunFZF<CR>
+endfunc
+augroup godot | au!
+    au FileType gdscript call GodotSettings()
+augroup end
+
