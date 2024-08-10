@@ -1,11 +1,19 @@
 {
-    "languageserver": {
-        "godot": {
-            "host": "127.0.0.1",
-            "filetypes": ["gdscript"],
-            "port": 6005
-            "disableDiagnostics": true
-        }
+  "languageserver": {
+    "godot": {
+      "host": "127.0.0.1",
+      "filetypes": ["gdscript"],
+      "port": 6005,
+      "disableDiagnostics": true
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "initializationOptions": {},
+      "settings": {}
+      "disableDiagnostics": true
     }
+  }
 }
 
